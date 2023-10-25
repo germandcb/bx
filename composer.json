@@ -1,0 +1,26 @@
+{
+    "name": "germa/bx",
+    "description": "blog",
+    "authors": [
+        {
+            "name": "german",
+            "email": "gdcelisb@sanmateo.edu.co"
+        },
+        {
+            "name": "santiago1",
+            "email": "sehernandezc@sanmateo.edu.co"
+        },
+        {
+            "name": "santiago2",
+            "email": "smorenor@sanmateo.edu.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models"
+        }
+    }
+}

@@ -9,6 +9,8 @@
     --gris: #E1E1E1;
     --grisCalro: #f1f1f1;
     --blanco: #ffffff;
+    --verde: #98df77;
+    --rojo: #da6464;
     
 }
 
@@ -91,6 +93,19 @@ img {
     opacity: 0;
     height: 0;
     transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+}
+.alerta {
+    color: var(--blanco);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.exito {
+    background-color: var(--verde);
+}
+.error {
+    background-color: var(--rojo);
 }
 
 /* Logo */

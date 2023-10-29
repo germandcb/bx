@@ -18,7 +18,7 @@
                     <a href="/">{ Inicio }</a>
                     <a href="/about">{ Sobre el proyecto }</a>
                     <div class="user">
-                        <a href="/check-in" class="btn">{ Registrarse }</a>
+                        <a href="/registrarse" class="btn">{ Registrarse }</a>
                         <a href="/login" class="btn">{ Iniciar Sesión }</a>
                     </div>
                 </nav>

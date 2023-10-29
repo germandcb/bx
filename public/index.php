@@ -19,8 +19,8 @@ $router->post('/login', [LoginController::class,'login']);
 $router->post('/logout', [LoginController::class,'logout']);   
 
 // Crear cuenta
-$router->get('/check-in', [LoginController::class,'crear']);
-$router->post('/check-in', [LoginController::class,'crear']);
+$router->get('/registrarse', [LoginController::class,'crear']);
+$router->post('/registrarse', [LoginController::class,'crear']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

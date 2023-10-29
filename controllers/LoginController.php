@@ -7,9 +7,36 @@ class LoginController {
     public static function login(Router $router) {
         $errores = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            debuguear($_POST);
+            $auth = new Usuario($_POST);
+
+            $alertas = $auth->validarLogin();
+
+            if (empty($alertas)) {
+                // Comprobar que el usuario exista
+                $usuario = Usuario::where('username', $auth->username);
+
+                if ($usuario) {
+                    
+                    // Verificar la contraseña
+                    if ($usuario->comprobarContrasena($auth->contrasena)) {
+
+                        $_SESSION['id'] = $usuario->id;
+                        $_SESSION['username'] = $usuario->username; 
+                        $_SESSION['correo'] = $usuario->correo;
+                        $_SESSION['login'] = true;
+
+                        // Redireccionamiento
+                        header('Location: /blog');
+                    }
+                } else {
+                    Usuario::setAlerta('error', 'Usuario no econtrado o no existe');
+                }
+            } 
         }
-        $router->render("auth/login");
+        $alertas = Usuario::getAlertas();
+        $router->render("auth/iniciar-sesion", [
+            "alertas" => $alertas
+        ]);
     }
     public static function logout() {
         echo "Desde logout";
@@ -37,7 +64,7 @@ class LoginController {
                     //hashear el password
                     $usuario->hashPassword();
 
-                    // Crear Usuario
+                    // Guardar Usuario
                     $resultado = $usuario->guardar();
                     if ($resultado) {
                         header('Location: /');

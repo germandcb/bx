@@ -51,6 +51,7 @@ class Usuario extends ActiveRecord{
         if (!$this->fechaNacimiento) {
             self::$alertas['error'][] = 'El fecha de nacimiento es obligatorio';
         }
+        // Valida edad, debe ser mayor de 20 años para registrasrse
         $fechaActual = new DateTime();
         $fechaNacimiento = new DateTime($this->fechaNacimiento);
         $edad = $fechaActual->diff($fechaNacimiento)->y;
@@ -58,6 +59,16 @@ class Usuario extends ActiveRecord{
             self::$alertas['error'][] = 'Debe ser mayor de edad para registrarse o colocar una fecha valida';
         }
 
+        return self::$alertas;
+    }
+
+    public function validarLogin() {
+        if (!$this->username) {
+            self::$alertas['error'][] = 'El nombre de usuario es obligatorio';
+        }
+        if (!$this->contrasena) {
+            self::$alertas['error'][] = 'La contraseña es obligatoria';
+        } 
         return self::$alertas;
     }
 
@@ -73,8 +84,16 @@ class Usuario extends ActiveRecord{
     }
 
     public function hashPassword() {
-        $this->contrasena = password_hash($this->contrasena, PASSWORD_BCRYPT);
+        $this->contrasena = password_hash($this->contrasena,PASSWORD_BCRYPT);
+    }
+
+    public function comprobarContrasena($contrasena) {
+        $resultado = password_verify($contrasena, $this->contrasena);
+        if (!$resultado) {
+            self::$alertas['error'][] = 'Contraseña incorrecto';
+        } else {
+            return true;
+        }
     }
 }
-
 ?>

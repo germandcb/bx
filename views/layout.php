@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$auth = $_SESSION['login'] ?? false;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,19 +17,37 @@
 </head>
 
 <body>
+
+<?php 
+    // echo "<pre>";
+    // var_dump($_SESSION);
+    // echo "</pre>";
+?>
     <header class="header">
         <div class="contenedor">
-            <div class="barra">
+            <div class="header-barra">
                 <a href="/" class="logo"><span>bx</span></a>
                 <nav class="navegacion ">
                     <a href="/">{ Inicio }</a>
                     <a href="/about">{ Sobre el proyecto }</a>
+                    <?php if ($auth) { ?>
+                        <a href="#">{ Mis Entradas }</a>
+                    <?php }?>
                     <div class="user">
-                        <a href="/registrarse" class="btn">{ Registrarse }</a>
-                        <a href="/login" class="btn">{ Iniciar Sesión }</a>
+                        <?php if (!$auth) { ?>
+                            <a href="/registrarse" class="btn">{ Registrarse }</a>
+                            <a href="/iniciar-sesion" class="btn">{ Iniciar Sesión }</a>
+                        <?php }?>
                     </div>
                 </nav>
                 <button class="mobile-menu btn-m">≡</button>
+                <?php if ($auth) { ?>
+                    <div class="user-acciones">
+                        <a href="/cuenta" class="">{ Cuenta }</a>
+                        <a href="/cerrar-sesion" class="">{ Cerrar Sesión }</a>
+                    </div>
+                    <span class="user-icon">OwO</span>
+                <?php }?>
             </div>
         </div>
     </header>

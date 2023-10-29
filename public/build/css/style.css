@@ -117,7 +117,15 @@ img {
     font-weight: 700;
 }
 
-
+.user-icon {
+    background-color: var(--gris);
+    border-radius: 10rem;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    justify-self: end;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
 /* Botones */
 .btn {
     color: var(--blanco);
@@ -145,12 +153,24 @@ img {
 .header {
     box-shadow: 0 1px 20px 0px rgba(73, 73, 73, 0.25);
 }
+.header-barra {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr 0.2fr;
+    align-items: center;
+}
+@media (min-width: 1000px) {
+    .header-barra {
+        grid-template-columns: 0.2fr 2fr;
+    }
+}
 .barra {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     line-height: 1.2;
+    position: relative;
 }
+
 .barra-header{
     display: flex;
 }
@@ -171,7 +191,7 @@ img {
         flex-direction: row;
     }
 }
-
+.user-acciones > a,
 .navegacion > a,
 .consulta > a {
     padding: 1rem 2rem;
@@ -179,13 +199,31 @@ img {
     font-weight: 600;
     color: var(--negro);
 }
-
+.user-acciones,
 .navegacion {
     visibility: hidden;
     opacity: 0;
     height: 0;
 }
 
+.navegacion-mobiel-user {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    width: 20rem;
+    height: 15rem;
+    background-color: var(--grisCalro);
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
 .navegacion-mobile {
     visibility: visible;
     opacity: 1;
@@ -202,6 +240,7 @@ img {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
 }
 
 .user {
@@ -213,6 +252,7 @@ img {
 
 @media (min-width: 1000px) {
     .navegacion {
+        justify-self: center;
         visibility: visible;
         opacity: 1;
         height: auto;
@@ -231,7 +271,7 @@ img {
     }
     
 }
-
+.user-acciones a:hover,
 .navegacion a:hover,
 .consulta a:hover {
     background-color: var(--negro);
@@ -241,6 +281,9 @@ img {
 
 .mobile-menu {
     display: block;
+    justify-self: end;
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
 }
 
 @media (min-width: 1000px) {

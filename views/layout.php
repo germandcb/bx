@@ -12,8 +12,8 @@ $auth = $_SESSION['login'] ?? false;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bx</title>
-    <link rel="stylesheet" href="../build/css/style.css">
     <link rel="stylesheet" href="../build/css/normalize.css">
+    <link rel="stylesheet" href="../build/css/style.css">
 </head>
 
 <body>
@@ -31,12 +31,12 @@ $auth = $_SESSION['login'] ?? false;
                     <a href="/">{ Inicio }</a>
                     <a href="/about">{ Sobre el proyecto }</a>
                     <?php if ($auth) { ?>
-                        <a href="#">{ Mis Entradas }</a>
+                        <a href="/blog/mis-entradas">{ Mis Entradas }</a>
                     <?php }?>
                     <div class="user">
                         <?php if (!$auth) { ?>
-                            <a href="/registrarse" class="btn">{ Registrarse }</a>
                             <a href="/iniciar-sesion" class="btn">{ Iniciar Sesión }</a>
+                            <a href="/registrarse" class="btn">{ Registrarse }</a>
                         <?php }?>
                     </div>
                 </nav>

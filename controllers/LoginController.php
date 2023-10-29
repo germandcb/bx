@@ -26,7 +26,7 @@ class LoginController {
                         $_SESSION['login'] = true;
 
                         // Redireccionamiento
-                        header('Location: /blog');
+                        header('Location: /');
                     }
                 } else {
                     Usuario::setAlerta('error', 'Usuario no econtrado o no existe');
@@ -39,13 +39,11 @@ class LoginController {
         ]);
     }
     public static function logout() {
-        echo "Desde logout";
-    }
-    public static function olvide() {
-        echo "Desde olvide";
-    }
-    public static function recuperar() {
-        echo "Desde recuperar";
+        session_start();
+
+        $_SESSION = [];
+
+        header('Location: /');
     }
     public static function crear(Router $router) {
 
@@ -67,7 +65,7 @@ class LoginController {
                     // Guardar Usuario
                     $resultado = $usuario->guardar();
                     if ($resultado) {
-                        header('Location: /');
+                        header('Location: /iniciar-sesion');
                     }
                 }
             }

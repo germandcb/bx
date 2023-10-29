@@ -16,5 +16,5 @@ function navegacionResponsiva () {
 }
 function navegacionResponsivaUser () {
     const navegacion = document.querySelector('.user-acciones');
-    navegacion.classList.toggle('navegacion-mobile');
+    navegacion.classList.toggle('navegacion-mobiel-user');
 }

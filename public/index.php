@@ -10,22 +10,23 @@ use MVC\Router;
 $router = new Router();
 
 // paginas adicionales ZONA PUBLICA
-$router->get('/', [PaginasControllers::class,'index']);
+$router->get('/', [BlogController::class,'index']);
 $router->get('/about', [PaginasControllers::class,'about']);
+$router->get('/blog/entrada', [PaginasControllers::class,'entrada']);
 
 // Iniciar Sesión
 $router->get('/iniciar-sesion', [LoginController::class,'login']);
 $router->post('/iniciar-sesion', [LoginController::class,'login']);
-$router->post('/cerrar-sesion', [LoginController::class,'logout']);   
+$router->get('/cerrar-sesion', [LoginController::class,'logout']);   
 
 // Crear cuenta
 $router->get('/registrarse', [LoginController::class,'crear']);
 $router->post('/registrarse', [LoginController::class,'crear']);
 
 // ZONA PRIVADA
-$router->get('/blog', [BlogController::class,'index']);
 $router->get('/blog/crear-entrada', [BlogController::class,'crear']);
 $router->get('/blog/actualizar-entrada', [BlogController::class,'actualizar']);
+$router->get('/blog/mis-entradas', [BlogController::class,'misEntradas']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

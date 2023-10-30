@@ -3,7 +3,7 @@
         <div class="caja">
             <h1 class="centrar-texto">!Explore lo que la gente esta diciendo aa¡</h1>
             <div class="barra">
-                <a href="<?php echo $auth ? '/crear-entrada' : '/iniciar-sesion'; ?>" class="btn">[ Crear entrada ⇨ ]</a>
+                <a href="/blog/crear-entrada" class="btn">[ Crear entrada ⇨ ]</a>
                 <div class="consulta">
                     <a href="">[ Por Fecha ⇩ ]</a>
                     <a href="">[ Por Relevancia ⇩ ]</a>

@@ -24,12 +24,18 @@ class Router
         session_start();
 
         // Arreglo de rutas protegidas...
-        //$rutas_protegidas = [''];
+        $rutas_protegidas = ['/blog/crear-entrada', '/blog/actualizar-entrada', '/blog/mis-entradas'];
 
-        //$auth = $_SESSION['login'] ?? null;
+        $auth = $_SESSION['login'] ?? null;
 
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
+
+        // Proteger las rutas
+        if (in_array($currentUrl, $rutas_protegidas) && !$auth) {
+            header('Location: /iniciar-sesion');
+        }
+
 
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;
@@ -42,7 +48,8 @@ class Router
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
-            echo "Página No Encontrada o Ruta no válida";
+            $this->render('templates/404');
+            //echo "Página No Encontrada o Ruta no válida";
         }
     }
 

@@ -149,6 +149,28 @@ img {
     background-color: var(--gris);
 }
 
+.btn-entrada{
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    color: var(--blanco);
+    border-radius: 0.5rem;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-entrada:hover{
+    filter: brightness(90%);
+}
+
+.btn-eliminar{
+    background-color: var(--rojo);
+}
+
+
+.btn-actualizar{
+    background-color: var(--verde);
+}
+
 /* Header */
 .header {
     box-shadow: 0 1px 20px 0px rgba(73, 73, 73, 0.25);
@@ -315,11 +337,11 @@ img {
 .datos-entrada {
     display: flex;
     justify-content: flex-start;
+    align-items: baseline;
 }
 .datos-entrada p {    
     margin: 0;
     margin-top: 1rem;
-    margin-right: 2.2rem;
 }
 
 /* login */
@@ -330,6 +352,7 @@ img {
     padding: 2.5rem 5rem ;
     border-radius: 5rem;
     gap: 0.6rem;
+    margin-bottom: 4rem;
 }
 
 @media (min-width: 600px) {
@@ -338,11 +361,18 @@ img {
     }
 }
 
-input {
+input, textarea {
     padding: 1.5rem 2.5rem;
     border: 1px solid var(--gris);
     border-radius: 1.5rem;
 }
+
+textarea {
+    min-height: 30rem;
+    resize: none;
+    font-size: 16px;
+}
+
 .btn-2 {
     margin-top: 2rem;
     cursor: pointer;
@@ -365,4 +395,10 @@ input {
 /* ESTILOS DE LA ENTRADA */
 .contenido-entrada {
     font-size: 2.5rem;
+}
+
+.formulario-acciones{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }

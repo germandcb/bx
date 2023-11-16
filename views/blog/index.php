@@ -1,7 +1,7 @@
 <main>
     <div class="contenedor">
         <div class="caja">
-            <h1 class="centrar-texto">!Explore lo que la gente esta diciendo aa¡</h1>
+            <h1 class="centrar-texto">¡Explore lo que la gente esta diciendo!</h1>
             <div class="barra">
                 <a href="/blog/crear-entrada" class="btn">[ Crear entrada ⇨ ]</a>
                 <div class="consulta">

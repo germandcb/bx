@@ -19,7 +19,7 @@
 
             <input type="submit" value="Iniciar Sesión" class="btn btn-2">
 
-            <p>¿Olvido su contraseña? - <a href="">Recuperar Contraseña</a></p>
+            <p>¿Olvido su contraseña? - <a href="" onclick="return alert('Contactese con el administrador');">Recuperar Contraseña</a></p>
         </form>
     </div>
 </main>

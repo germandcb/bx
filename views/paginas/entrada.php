@@ -11,6 +11,10 @@
             <p class="contenido-entrada">
                 <?php echo $entrada->contenido_entrada; ?>
             </p>
+
+            <div class="formulario-acciones">
+                <a href="/" class="btn btn-2">&laquo; Volver</a>
+            </div>
         </div>
     </div>
 </main>

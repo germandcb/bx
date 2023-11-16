@@ -3,3 +3,13 @@ admin
 
 pablo
 12*!aAgg
+
+Marcelo
+12*!aAg
+marcelo@bx.com
+
+- pagina inicio | contenido de la entrada | Registrarse
+
+- Iniciar sesion | crear una entrada | cerrar sesion
+
+- diferencia de pantalla | Actualizar | eliminar 

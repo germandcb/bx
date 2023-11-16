@@ -43,7 +43,7 @@ $auth = $_SESSION['login'] ?? false;
                 <button class="mobile-menu btn-m">≡</button>
                 <?php if ($auth) { ?>
                     <div class="user-acciones">
-                        <a href="/cuenta" class="">{ Cuenta }</a>
+                        <a href="#" class="" onclick="return alert('Pagina en construcción');">{ Cuenta }</a>
                         <a href="/cerrar-sesion" class="">{ Cerrar Sesión }</a>
                     </div>
                     <span class="user-icon">OwO</span>

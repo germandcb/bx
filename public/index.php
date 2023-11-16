@@ -25,8 +25,11 @@ $router->post('/registrarse', [LoginController::class,'crear']);
 
 // ZONA PRIVADA
 $router->get('/blog/crear-entrada', [BlogController::class,'crear']);
+$router->post('/blog/crear-entrada', [BlogController::class,'crear']);
 $router->get('/blog/actualizar-entrada', [BlogController::class,'actualizar']);
+$router->post('/blog/actualizar-entrada', [BlogController::class,'actualizar']);
 $router->get('/blog/mis-entradas', [BlogController::class,'misEntradas']);
+$router->post('/blog/eliminar-entrada',[BlogController::class,'eliminar']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

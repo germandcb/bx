@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', 'root', 'blog_bx');
+$db = mysqli_connect('localhost', 'root', '', 'blog_bx');
 
 
 if (!$db) {

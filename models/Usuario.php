@@ -5,13 +5,14 @@ use DateTime;
 class Usuario extends ActiveRecord{
 
     protected static $tabla = "usuario";
-    protected static $columnasDB = ['id', 'username', 'correo', 'fechaNacimiento', 'contrasena'];
+    protected static $columnasDB = ['id', 'username', 'correo', 'fechaNacimiento', 'contrasena', 'admin'];
 
     public $id;
     public $username;
     public $correo;
     public $fechaNacimiento;
     public $contrasena;
+    public $admin;
 
     public function __construct($args = []) {
         $this->id = $args['id'] ?? null;
@@ -19,7 +20,7 @@ class Usuario extends ActiveRecord{
         $this->correo = $args['correo'] ?? '';
         $this->fechaNacimiento = $args['fecha-nacimiento'] ?? '';
         $this->contrasena = $args['contrasena'] ?? '';
-        
+        $this->admin = $args['admin'] ?? '0';
     }
 
     public function validarNuevaCuenta() {

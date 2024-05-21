@@ -24,7 +24,7 @@ class Router
         session_start();
 
         // Arreglo de rutas protegidas...
-        $rutas_protegidas = ['/blog/crear-entrada', '/blog/actualizar-entrada', '/blog/mis-entradas'];
+        $rutas_protegidas = ['/blog/crear-entrada', '/blog/actualizar-entrada', '/blog/mis-entradas', '/anuncios', 'anuncios/crear', '/anuncios/actualizar'];
 
         $auth = $_SESSION['login'] ?? null;
 

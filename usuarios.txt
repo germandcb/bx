@@ -13,3 +13,12 @@ marcelo@bx.com
 - Iniciar sesion | crear una entrada | cerrar sesion
 
 - diferencia de pantalla | Actualizar | eliminar 
+
+Pasos que debo hacer
+
+1- Modificar base de datos para que contenga el campo admin
+2- crear rutas para crear un anuncion (CRUD) ***
+
+3- Seleccionar seccion dentro de la pagina para colocar el anunci
+4- Validar que solo el usuario administrador pueda hacer CRUD de anuncios
+5- termine XD

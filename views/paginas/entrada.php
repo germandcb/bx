@@ -16,5 +16,8 @@
                 <a href="/" class="btn btn-2">&laquo; Volver</a>
             </div>
         </div>
+        <aside class="aside">
+            <?php include_once __DIR__ . '/../templates/li-anuncio-entrada.php'; ?>
+        </aside>
     </div>
 </main>

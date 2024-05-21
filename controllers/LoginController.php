@@ -26,7 +26,13 @@ class LoginController {
                         $_SESSION['login'] = true;
 
                         // Redireccionamiento
-                        header('Location: /');
+                        if ($usuario->admin === "1") {
+                            $_SESSION['admin'] = $usuario->admin ?? null;
+
+                            header('Location: /anuncios');
+                        } else {
+                            header('Location: /');
+                        }
                     }
                 } else {
                     Usuario::setAlerta('error', 'Usuario no econtrado o no existe');

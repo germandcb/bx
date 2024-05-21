@@ -1,5 +1,5 @@
 <main>
-    <div class="contenedor-entrada">
+    <div class="contenedor">
         <h1 class="centrar-texto"> Sobre el proyecto</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cupiditate soluta ad, neque, iste recusandae
             libero quaerat quae asperiores atque odio vero facilis quia earum placeat ex dolor fugiat minima. Lorem

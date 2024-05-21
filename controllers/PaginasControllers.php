@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\Entrada;
 use Model\Usuario;
+use Model\Anuncio;
 use MVC\Router;
 
 class PaginasControllers {
@@ -19,9 +20,13 @@ class PaginasControllers {
         // Buscar la entrada por su id
         $entrada = Entrada::find($id);
         $usuario = Usuario::find($entrada->usuario_id);
+
+        $anuncios = Anuncio::get(2);
+
         $router->render('paginas/entrada', [
             "entrada" => $entrada,
-            "usuario" => $usuario
+            "usuario" => $usuario, 
+            "anuncios" => $anuncios
         ]);
     }
 }

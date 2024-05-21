@@ -2,7 +2,7 @@
 
 use Model\Usuario;
 
-function debugear($variable) : string {
+function debuguear($variable) : string {
     echo "<pre>";
     var_dump($variable);
     echo "</pre>";
@@ -34,6 +34,12 @@ function validarORedireccionar(string $url) {
 }
 
 function validarTipoContenido ($tipo) {
-    $tipos = ['entrada'];
+    $tipos = ['entrada', 'anuncio'];
     return in_array($tipo, $tipos);
+}
+
+function isAdmin() : void {
+    if(!isset($_SESSION['admin'])) {
+        header('Location: /');
+    }
 }

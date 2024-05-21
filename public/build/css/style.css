@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 :root {
-    --fuenteHeading: 'Gabarito', cursive;
+    --fuenteHeading: sans-serif;
     --fuenteParrafos: 'Lato', sans-serif;
 
     --negro: #000000;
     --gris: #E1E1E1;
     --grisCalro: #f1f1f1;
     --blanco: #ffffff;
-    --verde: #98df77;
-    --rojo: #da6464;
+    --verde: #73cf48;
+    --rojo: #c53d3d;
     
 }
 
@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    font-family: var(--fuenteParrafos);
+    font-family: var(--fuenteHeading);
     font-size: 1.6rem;
     line-height: 1.5;
 }
@@ -35,8 +35,19 @@ body {
     margin: 0 auto;
 }
 .contenedor-entrada {
-    width: min(80%, 90rem);
+    width: min(90%, 120rem);
     margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+@media (min-width: 675px) {
+    .contenedor-entrada {
+        flex-direction: row;
+    }
 }
 .contenedor-formulario {
     width: min(70%, 80rem);
@@ -164,11 +175,17 @@ img {
 
 .btn-eliminar{
     background-color: var(--rojo);
+    padding: 1rem 0.5rem;
 }
 
 
 .btn-actualizar{
     background-color: var(--verde);
+    padding: 0.8rem 0.5rem;
+}
+
+.btn-anuncio {
+    font-size: 1.4rem;
 }
 
 /* Header */
@@ -319,7 +336,15 @@ img {
 /* Contenido Principal { home }*/
 .caja {
     padding: 5rem 0;
+    border: none;
+    padding-right: 2rem;
 }
+@media (min-width: 675px) {
+    .caja {
+        border-right: 1px solid var(--gris);
+    }
+}
+
 .entradas {
     padding: 5rem 0 0 0;
 }
@@ -334,6 +359,7 @@ img {
 .datos-us p {
     margin: 0;
 }
+.datos-anuncio,
 .datos-entrada {
     display: flex;
     justify-content: flex-start;
@@ -401,4 +427,38 @@ textarea {
     display: flex;
     justify-content: center;
     gap: 2rem;
+}
+
+/* Estilos para anuncios */
+.anuncio {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
+    padding: 2.5rem 5rem ;
+    border-radius: 5rem;
+    gap: 0.6rem;
+    margin-bottom: 4rem;
+}
+.anuncio > h3,
+.anuncio > h4,
+.anuncio > p {
+    margin: 0;
+}
+.anuncio {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.anuncio > form {
+    width: 100%;
+    height: 100%;
+}
+.acciones-anuncios {
+    margin: 4rem 0;
+}
+
+.aside > .anuncio {
+    padding: 2rem;
+    border-radius: 2rem;
 }

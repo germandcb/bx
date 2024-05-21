@@ -1,6 +1,6 @@
 <main>
     <div class="contenedor-entrada">
-        <div class="caja">
+        <div class="caja caja-entrada">
             <h1 class="centrar-texto"><?php echo $entrada->titulo_entrada; ?></h1>
             <div class="info-entrada">
                 <p> 

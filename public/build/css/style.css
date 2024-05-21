@@ -37,16 +37,14 @@ body {
 .contenedor-entrada {
     width: min(90%, 120rem);
     margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem 0;
 }
 @media (min-width: 675px) {
     .contenedor-entrada {
-        flex-direction: row;
+        grid-template-columns: 2fr 0.5fr;
     }
 }
 .contenedor-formulario {
@@ -334,13 +332,15 @@ img {
 }
 
 /* Contenido Principal { home }*/
+.caja-entrada {
+    border: none;
+}
 .caja {
     padding: 5rem 0;
-    border: none;
     padding-right: 2rem;
 }
 @media (min-width: 675px) {
-    .caja {
+    .caja-entrada {
         border-right: 1px solid var(--gris);
     }
 }

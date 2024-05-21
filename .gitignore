@@ -1,3 +1,6 @@
 /vendor
 composer.lock
 usuarios.txt
+
+modeloDB.mwb
+usuarios.txt

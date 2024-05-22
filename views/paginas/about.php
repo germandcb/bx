@@ -21,8 +21,5 @@
             illum voluptatibus excepturi minima laborum blanditiis, repellat aliquam, iste fugiat nihil! Modi, ipsa?
             Aspernatur tenetur voluptatem cumque?</p>
 
-        <p>@germancelis</p>
-        <p>@santiagohernandez</p>
-        <p>@santiagomoreno</p>
     </div>
 </main>

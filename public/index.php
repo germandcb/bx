@@ -11,7 +11,7 @@ use MVC\Router;
 $router = new Router();
 
 // paginas adicionales ZONA PUBLICA
-$router->get('/', [BlogController::class,'index']);
+$router->get('/', [PaginasControllers::class,'index']);
 $router->get('/about', [PaginasControllers::class,'about']);
 $router->get('/blog/entrada', [PaginasControllers::class,'entrada']);
 

@@ -9,7 +9,11 @@ use MVC\Router;
 
 class PaginasControllers {
     public static function index(Router $router) {
-        $router->render('paginas/index', []);
+
+        $entradas = Entrada::all();
+        $router->render('paginas/index', [
+            "entradas" => $entradas
+        ]);
     }
     public static function about(Router $router) {
         $router->render('paginas/about', []);

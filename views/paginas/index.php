@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="entradas">
-                <?php include __DIR__ .'/../templates/listar-entradas.php' ?>
+                <!-- <?php include __DIR__ .'/../templates/listar-entradas.php' ?> -->
             </div>
         </div>
     </div>

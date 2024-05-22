@@ -10,9 +10,9 @@ use MVC\Router;
 class PaginasControllers {
     public static function index(Router $router) {
 
-        $entradas = Entrada::all();
+        // $entradas = Entrada::all();
         $router->render('paginas/index', [
-            "entradas" => $entradas
+            // "entradas" => $entradas
         ]);
     }
     public static function about(Router $router) {

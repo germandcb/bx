@@ -6,13 +6,9 @@ use MVC\Router;
 
 class BlogController {
     public static function index(Router $router) { 
-        $auth = $_SESSION['login'] ?? false;   
-
-        $usuario = new Usuario($_SESSION);
+        
         $entradas = Entrada::all();
         $router->render("blog/index", [
-            "auth"=> $auth,
-            "usuario" => $usuario,
             "entradas" => $entradas
         ]);
     }
